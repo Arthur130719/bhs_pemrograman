@@ -1,0 +1,78 @@
+@startuml
+
+start
+
+:Menampilkan Menu Utama;
+:1. Makanan;
+:2. Minuman;
+:3. Kembali;
+
+if (Pilihan == "Makanan") then
+  :Menampilkan Menu Makanan;
+  :1. Pecel Lele;
+  :2. Nasi Goreng;
+  :3. Kembali;
+
+  if (Pilihan == "Minuman") then
+    :Menampilkan Menu Minuman;
+    :1. teh Manis;
+    :2. air mineral;
+    :3. Kembali;
+
+
+  if (Pilihan == "Pecel Lele") then
+    :Menampilkan Pilihan Pecel Lele;
+    :1. Qty;
+    :2. Total;
+    :3. Kembali;
+
+    if (Pilihan == "Qty") then
+      :Input Quantity;
+      :Tampilkan Qty;
+      :Menampilkan Pilihan Pecel Lele;
+
+    else if (Pilihan == "Total") then
+      :Hitung Total Harga;
+      :Tampilkan Total;
+      :Menampilkan Pilihan Pecel Lele;
+
+    else if (Pilihan == "Kembali") then
+      :Menampilkan Menu Makanan;
+
+    endif
+
+  else if (Pilihan == "Nasi Goreng") then
+    :Menampilkan Pilihan Nasi Goreng;
+    :1. Qty;
+    :2. Total;
+    :3. Kembali;
+
+    if (Pilihan == "Qty") then
+      :Input Quantity;
+      :Tampilkan Qty;
+      :Menampilkan Pilihan Nasi Goreng;
+
+    else if (Pilihan == "Total") then
+      :Hitung Total Harga;
+      :Tampilkan Total;
+      :Menampilkan Pilihan Nasi Goreng;
+
+    else if (Pilihan == "Kembali") then
+      :Menampilkan Menu Makanan;
+
+    endif
+
+  else if (Pilihan == "Kembali") then
+    :Menampilkan Menu Utama;
+
+  endif
+
+else if (Pilihan == "Minuman") then
+  :Menampilkan Menu Minuman;
+
+else if (Pilihan == "Kembali") then
+  stop
+
+endif
+
+@enduml
