@@ -1,0 +1,23 @@
+@startuml
+actor user
+participant "MENU" as M
+participant "Pilih Menu" as pil
+participant "Aku" as A
+participant "Dia" as D
+participant "Quantity" as qty
+participant "Total" as tot
+participant "Exit" as X
+
+user --> M: Tampilkan Menu Utama
+M --> pil: Pilih Menu 1 atau 2, pilih aku atau dia
+pil --> A: Menampilkan Profile Aku
+A --> qty: Masukan Jumlah Quantity
+qty --> tot: print
+M <-- tot: Kembali Ke Menu
+pil --> D: Menampilkan Profile Dia
+D --> qty: Masukan Jumlah Quantity
+qty --> tot: print
+tot --> X: Jika Pilihan Exit
+M <-- tot: Kembali Ke Menu
+
+@enduml
