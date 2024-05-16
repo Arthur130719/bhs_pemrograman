@@ -2,7 +2,7 @@
 
 left to right direction
 
-actor rectangle
+actor user
 rectangle program {
     user -- (menu)
     (menu) .> (choice 1) : extends
