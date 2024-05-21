@@ -1,0 +1,20 @@
+@startuml
+
+[*] --> MENU
+MENU : 1. TAMBAH
+MENU : 2. KURANG
+MENU : 3. KALI
+MENU : 4. BAGI
+MENU --> PILIHAN
+PILIHAN : Masukan Pilihan Anda
+PILIHAN --> MENU : Pilihan Anda Salah
+PILIHAN --> TAMBAH: a + b
+PILIHAN --> KURANG: a - b
+PILIHAN --> KALI: a * b
+PILIHAN --> BAGI: a / b
+
+TAMBAH --> print: hasil 
+KURANG --> print: hasil
+KALI --> print: hasil
+BAGI --> print: hasil 
+@enduml
