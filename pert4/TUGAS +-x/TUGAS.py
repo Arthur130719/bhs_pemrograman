@@ -14,7 +14,7 @@ def bagi(angka1, angka2):
         return angka1 / angka2
 
 def main():
-    print("Pilih operasi:")
+    print("MENU:")
     print("1. Tambah")
     print("2. Kurang")
     print("3. Kali")
