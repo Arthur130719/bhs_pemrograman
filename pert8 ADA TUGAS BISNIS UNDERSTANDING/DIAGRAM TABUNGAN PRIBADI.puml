@@ -2,16 +2,17 @@
 skinparam style strict
 
 class Main {
-  + main()
+  +menu program
 }
 
-class Database {
-  + add_savings(date: str, amount: float)
-  + delete_savings(entry_id: int)
-  + reset_savings()
-  + get_total_savings() : list
+class menu program {
+  +tambah catatan tabungan dengan menulis tahun bulan tanggal serta nominal tabungan --> masukan tahun bulan tanggal --> masukan nominal --> --> berhasil --> simpan --> break
+  +menampilkan catatan tabungan --> menampilkan tahun bulan tanggal dan nominal tabungan serta jumlahnya --> break
+  +hapus data catatan --> menampilkan data tabungan --> menghapus salah satu data catatan tabungan berdasarkan id --> berhasil --> simpan --> break
+  +reset data catatan --> menampilkan semua data tabungan --> membuat pilihan kepastian kepada pengguna (y/n) --> jika y akan mereset semua catatan tabungan jika n akan kembali ke menu --> simpan --> break
 }
 
-Main --> Database : uses
+Main -> menu : pilihan
 
 @enduml
+
