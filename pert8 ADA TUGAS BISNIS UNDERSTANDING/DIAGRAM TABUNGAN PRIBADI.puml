@@ -1,0 +1,17 @@
+@startuml
+skinparam style strict
+
+class Main {
+  + main()
+}
+
+class Database {
+  + add_savings(date: str, amount: float)
+  + delete_savings(entry_id: int)
+  + reset_savings()
+  + get_total_savings() : list
+}
+
+Main --> Database : uses
+
+@enduml
