@@ -1,40 +1,38 @@
-1. Definition
+1. Definisi
 
-Arrays (in python) are structures that can store and organize data sets. Data structures talk about a way to store, organize, group and represent data. Data structures are very important and must be mastered by a programmer. On programming forums, I often come across questions that I think can be solved if the person understands the concept of data structures.
+Array (dalam python) adalah struktur yang dapat menyimpan dan mengatur kumpulan data. Struktur data berbicara tentang cara menyimpan, mengatur, mengelompokkan, dan merepresentasikan data. Struktur data sangatlah penting dan harus dikuasai oleh seorang programmer. Di forum-forum pemrograman, saya sering menjumpai pertanyaan-pertanyaan yang menurut saya bisa diselesaikan jika orang tersebut memahami konsep struktur data.
 
-In this material, we will discuss advanced data structures, namely sets and dictionaries.
+Pada materi kali ini kita akan membahas tentang struktur data lanjutan yaitu himpunan dan kamus.
 
-2. Set
+2. Tetapkan
 
-A set in the python programming language is a collective data type that is used to store multiple values in a single variable with the following conditions: Iversitas
+Himpunan dalam bahasa pemrograman python merupakan tipe data kolektif yang digunakan untuk menyimpan beberapa nilai dalam satu variabel dengan ketentuan sebagai berikut: Iversitas
 
-stored member values must be unique (not duplicates)
+nilai anggota yang disimpan harus unik (bukan duplikat)
 
-The value of the member that has been entered cannot be changed anymore
+Nilai member yang sudah dimasukkan tidak dapat diubah lagi
 
-⚫ set is unordered aka unordered-which means it can't be accessed by index.
+⚫ set bersifat unordered alias tidak berurutan-artinya tidak bisa diakses berdasarkan indeks.
 
-To better understand the 3 points above, we will immediately do the practice.
+Untuk lebih memahami 3 poin di atas, langsung saja kita lakukan praktiknya.
 
-General form of Sets:
+Bentuk umum Himpunan:
 
-# use curly braces
+# gunakan kurung kurawal
 
 student_set = {'Huda', 'Lendis', 'Wahid', 'Basith'}
 
-print(student_set)
+mencetak(kumpulan_siswa)
 
-# convert list into set
+# ubah daftar menjadi kumpulan
 
-fruit_set = set(['mango', 'Apple'])
+buah_set = set(['mangga', 'Apel'])
 
-print(set_fruit)
+cetak(set_buah)
 
-# sets with different data types
+# set dengan tipe data berbeda
 
-set_mix = {'man', 'animal', 5, True, ('A', 'B')}
-
-08.24
+set_mix = {'manusia', 'hewan', 5, Benar, ('A', 'B')}
 
 print(set_mix)
 D. Tambahkan/Perbarui Elemen Kumpulan
