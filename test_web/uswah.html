@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Ucapan Ulang Tahun</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9ec1, #ff6f91, #ff4d6d, #ff002e);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Tambahkan pola bintang sebagai latar belakang */
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px white;
+            animation: blink 1.5s infinite alternate;
+        }
+
+        .star:nth-child(odd) {
+            animation-duration: 1s;
+        }
+
+        .star:nth-child(even) {
+            animation-duration: 2s;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .section {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        button, .yes-button {
+            padding: 12px 24px;
+            font-size: 1.2em;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        button:hover, .yes-button:hover {
+            background-color: #ff1493;
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-color: #ff9ec1;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            text-align: center;
+            color: white;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-color: #ff69b4;
+            animation: rotateBG 6s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotateBG {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .card-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card h1 {
+            font-size: 2.5em;
+            margin: 0;
+            animation: fadeInDown 2s ease forwards;
+        }
+
+        .card p {
+            font-size: 1.2em;
+            margin: 20px 0 0;
+            animation: fadeInUp 2s ease forwards;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .balloons {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 50px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: floatUp 6s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(2) {
+            left: 20%;
+            width: 60px;
+            height: 70px;
+            background-color: rgba(255, 183, 197, 0.8);
+            animation-duration: 7s;
+        }
+
+        .balloon:nth-child(3) {
+            left: 40%;
+            background-color: rgba(255, 223, 211, 0.8);
+            animation-duration: 8s;
+        }
+
+        .balloon:nth-child(4) {
+            left: 60%;
+            width: 40px;
+            height: 50px;
+            background-color: rgba(255, 239, 229, 0.8);
+            animation-duration: 9s;
+        }
+
+        .balloon:nth-child(5) {
+            left: 80%;
+            background-color: rgba(255, 255, 240, 0.8);
+            animation-duration: 10s;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(5deg); }
+            100% { transform: translateY(-400px) rotate(-5deg); }
+        }
+
+        #bg-music {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tambahkan bintang-bintang sebagai latar belakang -->
+    <div class="star" style="top: 10%; left: 20%;"></div>
+    <div class="star" style="top: 15%; left: 60%;"></div>
+    <div class="star" style="top: 20%; left: 80%;"></div>
+    <div class="star" style="top: 30%; left: 40%;"></div>
+    <div class="star" style="top: 40%; left: 10%;"></div>
+    <div class="star" style="top: 50%; left: 70%;"></div>
+    <div class="star" style="top: 60%; left: 90%;"></div>
+    <div class="star" style="top: 70%; left: 30%;"></div>
+    <div class="star" style="top: 80%; left: 50%;"></div>
+    <div class="star" style="top: 90%; left: 20%;"></div>
+
+    <!-- Pertanyaan 1 -->
+    <div id="question1" class="section active">
+        <h2>Apakah kamu adalah Uswah Maratis Shalihah?</h2>
+        <button class="yes-button" onclick="nextSection('question2')">Iya</button>
+        <button onclick="wrongAnswer()">Tidak</button>
+    </div>
+
+    <!-- Pertanyaan 2 -->
+    <div id="question2" class="section">
+        <h2>Klo benar itu kamu, aku cuma mau bilang aku sayang banget sama kamu.</h2>
+        <p>Semoga di ulang tahun kamu yang ke 20 ini semua doa dan harapan kamu akan tercapai ya... panjang umur dan bahagia selalu sayang. Semoga suka ya sama kadonya</p>
+        <button onclick="nextSection('surprise')">Lanjut</button>
+    </div>
+
+    <!-- Kejutan Ucapan -->
+    <div id="surprise" class="section">
+        <div class="card">
+            <div class="card-content">
+                <h1>Selamat Ulang Tahun, Uswah Maratis Shalihah!</h1>
+                <p>Semoga hari ini penuh kebahagiaan dan tawa!</p>
+            </div>
+            <div class="balloons">
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="your-music-file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function nextSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+
+            if (sectionId === 'surprise') {
+                const bgMusic = document.getElementById('bg-music');
+                bgMusic.play();
+            }
+        }
+
+        function wrongAnswer() {
+            alert("Maaf, ini bukan untuk kamu.");
+        }
+    </script>
+
+</body>
+</html>
